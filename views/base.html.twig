@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Trello2ScrumBoard: L&#039;outil facile pour imprimer vos Stories Scrum provenant de Trello</title>
+
+        <!-- Fav icons -->
+        <link rel="icon" type="image/x-icon" href="/favicon.ico">
+        <link rel="shortcut icon" href="/favicon.ico">
+
+        <!-- Apple Icons -->
+        <link rel="apple-touch-icon" sizes="57x57" href="/fav/a57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/fav/a60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/fav/a72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/fav/a76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/fav/a114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/fav/a120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/fav/a144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/fav/a152.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/fav/f16.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/fav/f96.png">
+        <link rel="icon" type="image/png" sizes="160x160" href="/fav/f160.png">
+
+        <!-- Windows 8 icons -->
+        <meta name="application-name" content="Trello2ScrumBoard"/>
+        <meta name="msapplication-TileColor" content="#177bcf"/>
+        <meta name="msapplication-square70x70logo" content="/tiny.png"/>
+        <meta name="msapplication-square150x150logo" content="/square.png"/>
+        <meta name="msapplication-wide310x150logo" content="/wide.png"/>
+        <meta name="msapplication-square310x310logo" content="/large.png"/>
+
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index,follow">
+
+    <!-- Alternate lang -->
+    <meta name="description" content="
+                    Trello2ScrumBoard est un outil simple et gratuit pour imprimer
+                    vos Stories Trello en de belles Stories Cards.
+                ">
+    <meta name="keywords" content="
+                    Story, Trello, Scrum, Agile, Impression
+                ">
+                <link rel="stylesheet" href="/scrum/web/css/theme.css"/>
+            	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    </head>
+    <body id="page-top" class="index">
+    <!-- Navigation -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+		    <div class="container">
+		        <!-- Brand and toggle get grouped for better mobile display -->
+		        <div class="navbar-header page-scroll">
+		            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		                <span class="sr-only">Menu</span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		            </button>
+		            <a class="navbar-brand page-scroll" href="/fr/#page-top">Trello2ScrumBoard</a>
+		        </div>
+
+		        <!-- Collect the nav links, forms, and other content for toggling -->
+		        {% block nav %}
+		        {% endblock %}
+		        <!-- /.navbar-collapse -->
+		    </div>
+		    <!-- /.container-fluid -->
+		</nav>
+		<!-- Header -->
+		<header id="quick-upload">
+		    <div class="container">
+		        <div class="intro-text">
+		        	<div class="row">
+		        		<div class="col-md-10 col-md-offset-1 ">
+		            		<div class="intro-lead-in">
+	                    		L'outil le plus simple pour <strong>imprimer</strong> vos 
+			                    <strong>Stories Trello</strong>
+	                    
+	    		            </div>
+	    		            {% block intro %}
+		        		    {% endblock %}
+		            	</div>
+		            </div>		
+					{% block header %}
+					{% endblock %}
+		        </div>
+		    </div>
+		</header>
+
+		{% block content %}
+		{% endblock %}
+
+        <link href="http://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet" type="text/css">
+    	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:100,300,400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <script src="/scrum/web/js/compile.js"></script>
+    </body>
+</html>

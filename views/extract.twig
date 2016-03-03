@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+   <title>Silex File Upload Example</title>
+</head>
+<body>
+	<div style="display: block">
+		{% for card in listCards%}
+			<div style="float: left">
+				{% set color = 'black' %}
+				{% for label in card.labels %}
+					{% if label.name == 'SPRINT GOAL' %}
+						{% set color = 'red' %}
+					{% endif %}
+				{% endfor %}
+				<table border="0" style="border: 3px solid black; width: 300px; text-align: center;">
+					<!-- title -->
+					<tr style="border: 3px solid black;">
+						<td style="border: 3px solid black; color: blue; font-weight: bold; width: 30%;">{{ card.idShort }}</td>
+						<td style="border: 3px solid black; font-weight: bold; width: 40%;">TSMS</td>
+						<td style="border: 3px solid black; color: red; font-weight: bold; width: 30%;">{{ card.difficulty }}</td>
+					</tr>
+					<!-- content -->
+					<tr style="border: 3px solid black;">
+						<td colspan="3" style="border: 5px solid {{ color }}; text-align: center; height: 185px">{{ card.name }}</td>
+					</tr>
+				</table>
+			</div>
+			{% if loop.index % 2 == 0 %}
+				<div style="clear: both"></div>
+				</div>
+				<div>
+			{% endif %}
+		{% endfor %}
+	</div>
+</body>
+</html>

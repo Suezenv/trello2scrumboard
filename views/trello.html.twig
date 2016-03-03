@@ -1,0 +1,140 @@
+{# <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+   <title>Silex File Upload Example</title>
+</head>
+<body>
+    <form action="" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend>File Upload</legend>
+            {{ form_widget(form) }}
+        </fieldset>
+        <input type="submit" name="Upload File" />
+   </form>
+</body>
+</html> #}
+
+{% extends 'base.html.twig' %}
+
+{% block nav %}
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+            <li class="hidden">
+                <a href="#page-top"></a>
+            </li>
+            <li>
+                <a class="page-scroll" href="#services" alt="nav.service.alt">Comment cela fonctionne</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block intro %}
+	<div class="intro-heading">
+	    Cet outil convertit les fichiers contenants vos stories Trello 
+	    <em>(Json)</em> en de belles Stories Cards. 
+		Sélectionnez votre fichier ci-dessous et cliquez sur 
+		"Convertir" pour les télécharger.
+	</div>
+{% endblock %}
+
+{% block header %}
+    <div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="sf-container">
+				<form name="uploadStories" method="post" action="" class="form-inline" enctype="multipart/form-data">
+					<h6 class="subscription-error"></h6>
+                    
+					{{ form_widget(form.file) }}
+                    <button type="submit" class="btn standard-button" name="upload">Convertir</button>
+
+					{{ form_widget(form) }}
+				</form>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block content %}
+	<!-- Services Section -->
+	<section id="services" class="odd">
+	    <div class="container">
+	        <div class="row">
+	            <div class="col-lg-12 text-center">
+	                <h2 class="section-heading">Comment cela fonctionne ?</h2>
+	                <h3 class="section-subheading text-muted">Trello2ScrumBoard est très simple d'utilisation. Créé 
+	                    pour vous faire gagner du temps, il vous permet d'imprimer 
+	                    vos Stories Trello en Stories cards lisibles et utilisables sur 
+	                    votre tableau Scrum.</h3>
+	            </div>
+	        </div>
+	        <div class="row text-center">
+	            <div class="col-md-4">
+	                <span class="fa-stack fa-4x">
+	                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+	                    <i class="fa fa-file-text-o fa-stack-1x fa-inverse"></i>
+	                </span>
+	                <h4 class="service-heading">1. Exportez vos stories Trello</h4>
+	                <p class="text-muted">
+	                    
+	                    Pour exporter les données du board au format json. More > Print and Export > Export Json. Sauvegarder le contenu dans un fichier sur votre machine.
+	                    
+	                </p>
+	            </div>
+	            <div class="col-md-4">
+	                <span class="fa-stack fa-4x">
+	                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+	                    <i class="fa fa-cloud-upload fa-stack-1x fa-inverse"></i>
+	                </span>
+	                <h4 class="service-heading">2. Envoyez le fichier</h4>
+	                <p class="text-muted">
+	                    
+	                    Envoyez votre fichier depuis le formulaire ci-dessus et cliquez sur le bouton "Convertir". Seuls les fichiers au format Json sont supportés. 
+	                    
+	                </p>
+	            </div>
+	            <div class="col-md-4">
+	                <span class="fa-stack fa-4x">
+	                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+	                    <i class="fa fa-print fa-stack-1x fa-inverse"></i>
+	                </span>
+	                <h4 class="service-heading">3. Téléchargez vos Stories Cards</h4>
+	                <p class="text-muted">
+	                    
+	                    Une fois le traitement terminé, choisissez les colonnes que vous voulez imprimer puis cliquez sur le bouton imprimer, la transformation en jolie user stories sera automatique.
+	                </p>
+	            </div>
+	        </div>
+	    </div>
+	</section>	<!-- FAQ -->
+
+	<section id="author" class="odd">
+	    <div class="container">
+	        <div class="row">
+	            <div class="col-lg-12 text-center">
+	                <h2 class="section-heading">Qui l&#039;a développé ?</h2>
+	                <h3 class="section-subheading text-muted">
+	                    Ce projet est totalement gratuit et n'est en aucune façon
+	                    attaché à la marque Trello.
+	                    
+	                </h3>
+	            </div>
+	        </div>
+	        <div class="row">
+	            <div class="col-sm-2"></div>
+	            <div class="col-sm-8">
+	                <div class="team-member">
+	                    <h4>Jean-Marie LE BONNIEC</h4>
+	                    <p class="text-muted">Chef de projet Web / Coach Agile</p>
+	                    <ul class="list-inline social-buttons">
+	                        <li>
+	                            <a href="mailto:jmlebonniec@gmail.com" target="_blank"><i class="fa fa-at"></i></a>
+	                        </li>
+	                    </ul>
+	                </div>
+	            </div>
+	            <div class="col-sm-2"></div>
+	        </div>
+	    </div>
+	</section>	<!-- Contact Section -->
+{% endblock %}
