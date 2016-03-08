@@ -123,7 +123,7 @@ $app->post('/trello/list', function (Request $request) use ($app) {
 		}
 	}
 
- 	return $app['twig']->render('extract.twig', array('listCards' => $listCards));
+ 	return $app['twig']->render('extract.twig', array('listCards' => $listCards, 'name' => $contents->name));
 });
 
 $app['debug'] = true;
