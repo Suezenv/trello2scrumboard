@@ -15,7 +15,7 @@ $app->register(new Silex\Provider\TranslationServiceProvider(), array(
     'translator.messages' => array(),
 ));
 
-$app->get('/trello', function (Request $request) use ($app) {
+$app->get('/', function (Request $request) use ($app) {
 	// some default data for when the form is displayed the first time
 
 	$form = $app['form.factory']->createBuilder('form')
@@ -34,7 +34,7 @@ $app->get('/trello', function (Request $request) use ($app) {
 	return $app['twig']->render('trello.html.twig', array('form' => $form->createView()));
 });
 
-$app->post('/trello', function (Request $request) use ($app) {
+$app->post('/', function (Request $request) use ($app) {
 	// some default data for when the form is displayed the first time
 	$form = $app['form.factory']->createBuilder('form')
 		->add('file', 'file')
@@ -80,7 +80,7 @@ $app->post('/trello', function (Request $request) use ($app) {
 	return $app['twig']->render('list.html.twig', array('forms' => $form->createView()));
 });
 
-$app->post('/trello/list', function (Request $request) use ($app) {
+$app->post('/list', function (Request $request) use ($app) {
 	// some default data for when the form is displayed the first time
 	$contents = json_decode(file_get_contents('trello.json'));
 
