@@ -80,7 +80,7 @@ $app->post('/', function (Request $request) use ($app) {
 	return $app['twig']->render('list.html.twig', array('forms' => $form->createView()));
 });
 
-$app->post('/list', function (Request $request) use ($app) {
+$app->post('/list/', function (Request $request) use ($app) {
 	// some default data for when the form is displayed the first time
 	$contents = json_decode(file_get_contents('trello.json'));
 
