@@ -102,16 +102,13 @@ $app->post('/list', function (Request $request) use ($app) {
 			$title = $matches[2];
 		}
 
-		if ($difficulty > 0) {
-			$item->difficulty = $difficulty;
+		$item->difficulty = $difficulty;
 
-			// enlève la difficulté du nom
-			$item->name = $title;
+		// enlève la difficulté du nom
+		$item->name = $title;
 
-			$list[$item->idList][$item->id] = $item;
-		}
+		$list[$item->idList][$item->id] = $item;
 	}
-
 	$listCards = array();
 
 	// echo '<pre>';
